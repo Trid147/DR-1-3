@@ -1,0 +1,26 @@
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+
+local player = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+local mouse = player:GetMouse()
+
+local isFirstPerson = true
+
+UserInputService.InputBegan:Connect(function(input: InputObject, isTyping)
+	if isTyping then return end
+	if input.KeyCode == Enum.KeyCode.T then
+		isFirstPerson = not isFirstPerson
+		if isFirstPerson then
+			player.CameraMaxZoomDistance = 1000
+			player.CameraMode = Enum.CameraMode.Classic
+			mouse.Icon = ""
+		else
+			player.CameraMaxZoomDistance = 1
+			player.CameraMode = Enum.CameraMode.LockFirstPerson
+			mouse.Icon = "rbxassetid://10181263741"
+				--"rbxassetid://117431027"
+		end
+	end
+end)
+
