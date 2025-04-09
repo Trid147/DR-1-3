@@ -7,6 +7,8 @@ local mouse = player:GetMouse()
 
 local isFirstPerson = true
 
+print("1/3 face set up.")
+
 UserInputService.InputBegan:Connect(function(input: InputObject, isTyping)
 	if isTyping then return end
 	if input.KeyCode == Enum.KeyCode.T then
@@ -19,8 +21,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject, isTyping)
 			player.CameraMaxZoomDistance = 1
 			player.CameraMode = Enum.CameraMode.LockFirstPerson
 			mouse.Icon = "rbxassetid://10181263741"
-				--"rbxassetid://117431027"
+			--"rbxassetid://117431027"
 		end
 	end
 end)
-
